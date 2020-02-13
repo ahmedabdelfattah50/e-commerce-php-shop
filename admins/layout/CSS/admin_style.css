@@ -1,0 +1,75 @@
+/*      // Extra small devices (portrait phones, less than 576px)
+        // No media query for `xs` since this is the default in Bootstrap
+*/
+/* ========== Start login form ========== */
+
+.login {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50% auto;
+    margin-top: 50%;
+}
+
+.login h1 {
+    margin-bottom: 40px;
+    color: #ff5030;
+}
+
+.login input {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    padding-left: 10px;
+    width: 80%;
+    font-size: 20px;
+    color : rgb(31, 24, 24);
+    font-weight: 640; 
+}
+
+.login input:focus {
+    box-shadow: 0 0 10px #ddd;
+    outline: none;
+    border: 1px solid #ddd;
+}
+
+.login input:last-child {
+    color: #fff;
+    border: none;
+    font-weight: 640;
+    padding: 10px 0;
+    background: #ff5030;
+} 
+
+.login input:last-child:hover {
+    background: #f03a19;
+} 
+
+/* ========== End login form ========== */
+
+
+/* ################################################################### */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+}
+
+/* ################################################################### */
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+
+}
+
+/* ################################################################### */
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {  
+
+}
+
+/* ################################################################### */
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+
+}
