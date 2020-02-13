@@ -1,6 +1,6 @@
 <?php
 
-    // $noNavbar = '';
+    $noNavbar = '';
     session_start();
 
     if(isset($_SESSION['name'])){ 
