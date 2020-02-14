@@ -1,11 +1,10 @@
 <?php
 
     function lang( $phrase ) {
-        static $lang = array(
-            // the Home page 
-
-            "hello" => "Hello To Your page of control",
-            "name" => " MR/ Ahmed"
+        static $lang = array(            
+            // Generial Character
+            'title'       => 'E-Commerce Shop',
+            'HomeTitle'   => 'Home'              
         );
 
         return $lang[$phrase];

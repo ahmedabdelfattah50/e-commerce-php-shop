@@ -11,9 +11,12 @@
 
     // the connection with database
     include 'connect database.php';
+    
     include $lang_path . 'english file.php';         // ======== inclue the english file ======== 
     include $tmpl . "header.php";                    // ======== inclue the header ======== 
+    include $tmpl . "footer.php";                   // ======== include the footer ======== 
 
     if(!isset($noNavbar)) {                // ##### if it has not noNavbar variable it will include the navbar file 
-        include $tmpl . "navbar.php";                    // ======== inclue the navbar ========    
+        include $tmpl . "navbar.php";               // ======== inclue the navbar ========    
     }
+

@@ -4,7 +4,8 @@
     session_start();
 
     if(isset($_SESSION['name'])){ 
-        header('location:dashboard.php'); exit(); 
+        header('location:dashboard.php'); 
+        exit(); 
     }
 
     include 'init.php';                   // ======== include the init file ========   
@@ -15,33 +16,28 @@
 
         $username = $_POST['user'];
         $password = $_POST['pass'];
+
+        // this for Encrypt password
         $hashedpass = sha1($password);
 
-        // echo $password;
-
-        // echo $hashedpass;
-        //  648ba39c58d7f7360ae983e336aeccc13a2f56ef 
-
+        // this for prepare the database in the table to be brings
         $stmt = $con->prepare("SELECT username , password FROM users WHERE username = ? AND password = ? AND GroupID = 1");        
-        $stmt->execute(array($username , $hashedpass));
+        $stmt->execute(array($username , $password));
 
+        // this for count the row which it found it in the database
         $count = $stmt->rowcount();
 
-        if($count > 0 ) {
-            echo "welcome " . $username . "I find if in database : " . $count;
-        } else {
-            echo "I can not Enter the database Ya " . $username;
+        if($count > 0) {
+            $_SESSION['username'] = $username;
+            header('Location:dashboard.php');
+            exit(); 
         }
-
-        // $_SESSION['username'] = $username;
-        // header('Location:dashboard.php');
-        // exit(); 
     }
 ?>
  
 <!-- ========== Start login form ========== -->
 <form class="login" action="<?php $_SERVER['PHP_SELF']?>" method="POST">
-    <h1>User Login</h1>
+    <h1>Admin Login</h1>
     <input type="text" name="user" placeholder="username" autocomplete="off">
     <input type="password" name="pass" placeholder="password" autocomplete="off">
     <input type="submit" value="submit">
@@ -50,6 +46,5 @@
     
 
 
-<?php include $tmpl . "footer.php"; ?>                      <!-- ======== include the footer ======== -->
 
 
